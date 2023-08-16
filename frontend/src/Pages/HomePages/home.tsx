@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const client = axios.create({
     baseURL: "http://localhost:4000/users"

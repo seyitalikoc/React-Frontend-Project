@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 const _Login = () => {
     const navigate = useNavigate(); // sayfa yönlendirme
     const [data, setData] = useState({
@@ -29,8 +28,13 @@ const _Login = () => {
                 localStorage.setItem("username", JSON.stringify(userData.username));
                 localStorage.setItem("access_token", JSON.stringify(response.data['access_token'].toString()));
                 localStorage.setItem("refresh_token", JSON.stringify(response.data['refresh_token'].toString()));
-                navigate('/profile');
+                localStorage.setItem("isLogin", "true");
+                localStorage.setItem("id",response.data['id']);
+                navigate('/');
+                window.location.reload();
+                
             })
+            
         }catch(error){  
         }
     };
@@ -63,10 +67,12 @@ const _Login = () => {
                     />
                 </div>
                 <div className='register-button'>
-                    <button className='form_button' type='submit' onClick={handleSubmit} >LOGIN</button>
+                    <button className='form_button' type='submit' onClick={handleSubmit}>LOGIN</button>
                 </div>
             </div>
         </div>      
     )
 }
 export default _Login;
+
+//<button className='form_button' type='submit' onClick={handleSubmit} href >LOGIN</button>

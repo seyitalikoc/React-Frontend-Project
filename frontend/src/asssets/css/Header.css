@@ -1,6 +1,36 @@
 .my-header {
-    float: center;
+    background-color: #ffd700;
+    height: 100px;
+}
+
+.HeaderIcon {
+    height: 100px;
+    width: auto;
+    margin-left: 2.9%;
+}
+
+.HeaderA {
     text-align: center;
+    display: inline;
+    margin-top: 20px;
     font-size: xx-large;
-    background-color: gold;
+    color:blueviolet;
+    position: absolute;
+    top: 2.6%;
+    left: 10.5%;
+    transform: translate(-50%, -50%);
+}
+
+.HeaderLink {
+    color:black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    font-size: x-large;
+    .active {
+        color: aqua;
+    }
 }

@@ -1,9 +1,19 @@
 import { useState } from 'react';
 import '../../asssets/css/style.css';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const User = () => {
-    /*const navigate = useNavigate();*/
+    const navigate = useNavigate();
+
+    const routeChange = () =>{ 
+        let path = `/profile/edit`; 
+        navigate(path);
+    }
+
+    const routeChange2 = () =>{ 
+        let path = `/profile/pass`; 
+        navigate(path);
+    }
 
     const [data, setData] = useState({
         username:"",
@@ -15,14 +25,6 @@ const User = () => {
         IsActive:"",
         language:""
     });
-    
-    const handleSubmit = (e : any) => {
-        e.preventDefault();
-        const user = localStorage.getItem('username')?.replaceAll('"','');
-        axios.get("http://localhost:4000/login/find/"+ user).then((response) => {
-            setData(response.data);
-        });
-    };
     
     return(
         <div className="form">
@@ -55,7 +57,8 @@ const User = () => {
                     <label>{data.eMail}<br/></label>
                 </div>
                 <div className='register-button'>
-                    <button className='form_button' type='submit' onClick={handleSubmit}>SHOW</button>
+                    <button className='form_button' type='submit' onClick={routeChange}>Edit Profile</button>
+                    <br/><br/><button className='form_button' type='submit' onClick={routeChange2}>Change Password</button>
                 </div>
           </div>
         </div>      

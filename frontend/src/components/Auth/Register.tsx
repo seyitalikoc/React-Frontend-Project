@@ -1,10 +1,9 @@
 import '../../asssets/css/style.css';
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 
 const RegistrationForm = () => {
-    const navigate = useNavigate();
 
     const [data, setData] = useState({
         username:"",
@@ -32,16 +31,18 @@ const RegistrationForm = () => {
             name: data.name,
             birthDate: data.birthDate,
             profession: data.profession,
-            eMail: data.eMail,
+            eMail: email,
             password: data.password,
             IsActive: true,
             language: data.language
         };
         axios.post("http://localhost:4000/users/create", userData).then((response) => {
             alert(response.status);
-            navigate('/login');
+            window.location.assign('/login');
         });
     };
+
+    const email = localStorage.getItem('email');
     
     return(
         <div className="form">
@@ -107,9 +108,7 @@ const RegistrationForm = () => {
                         type="email" 
                         name="eMail" 
                         className="form__input" 
-                        placeholder="Email"
-                        value = {data.eMail}
-                        onChange={handleChange}
+                        value={email!}
                     />
                 </div>
                 <div className="password">
