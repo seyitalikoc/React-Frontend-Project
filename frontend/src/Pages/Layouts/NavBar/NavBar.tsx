@@ -4,7 +4,12 @@ import './NavBar.css';
 
 
 export default class NavBar extends React.Component {
-    
+    handleSubmit(e:any){
+        localStorage.setItem('logincontrol','false');
+        window.location.reload();
+        window.location.assign('/');
+    }
+
     render() {
         
         if(localStorage.getItem('logincontrol')?.replaceAll('"','') === 'true'){
@@ -31,10 +36,11 @@ export default class NavBar extends React.Component {
                             <img src='https://img.icons8.com/?size=512&id=26211&format=png'
                                 alt='TOKEN'
                                 className='Icon'
+                                onClick={this.handleSubmit}
                             />
                             LOG-OUT
                         </Link>
-                        <Link to={'/signup'} className='NavLink'>
+                        <Link to={'/profile'} className='NavLink'>
                             {localStorage.getItem('username')?.replaceAll('"','').toUpperCase()}
                         </Link>
                     </div>
@@ -68,7 +74,7 @@ export default class NavBar extends React.Component {
                         />
                         LOG-IN
                     </Link>
-                    <Link to={'/stripe'} className='NavLink'>
+                    <Link to={'/signup'} className='NavLink'>
                         SIGN-UP
                     </Link>
                 </div>

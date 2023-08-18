@@ -1,5 +1,4 @@
 import '../../asssets/css/style.css';
-import axios from 'axios';
 import { useState } from 'react';
 //import { useNavigate } from 'react-router-dom'
 
@@ -31,18 +30,18 @@ const RegistrationForm = () => {
             name: data.name,
             birthDate: data.birthDate,
             profession: data.profession,
-            eMail: email,
+            eMail: data.eMail,
             password: data.password,
             IsActive: true,
             language: data.language
         };
-        axios.post("http://localhost:4000/users/create", userData).then((response) => {
+        localStorage.setItem('userData',JSON.stringify(userData))
+        window.location.assign('/stripe');
+        /*axios.post("http://localhost:4000/users/create", userData).then((response) => {
             alert(response.status);
-            window.location.assign('/login');
-        });
+            
+        });*/
     };
-
-    const email = localStorage.getItem('email');
     
     return(
         <div className="form">
@@ -108,7 +107,8 @@ const RegistrationForm = () => {
                         type="email" 
                         name="eMail" 
                         className="form__input" 
-                        value={email!}
+                        value = {data.eMail}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="password">

@@ -9,7 +9,7 @@ import UserPage from '../Pages/AuthPages/UserPage.tsx';
 import Edit from '../components/Auth/Edit-Profile.tsx'
 import Pass from '../components/Auth/Password.tsx'
 import NavBar from '../Pages/Layouts/NavBar/NavBar.tsx';
-import Stripe from '../Pages/Stripe/Stripe.tsx';
+import StripeMain from '../Pages/Stripe/Stripe.tsx';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           <Route path="/profile" element= {<UserPage />}></Route>
           <Route path="/profile/edit" element= {<Edit />}></Route>
           <Route path="/profile/pass" element= {<Pass />}></Route>
-          <Route path="/stripe" element= {<Stripe />}></Route>
+          <Route path="/stripe" element= {<StripeMain />}></Route>
         </Routes>
       </Layout>
     </Router>

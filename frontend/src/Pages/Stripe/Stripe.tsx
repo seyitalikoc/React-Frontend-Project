@@ -1,33 +1,16 @@
-import React from 'react'
-import StripeCheckout from 'react-stripe-checkout';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
+import HomePage from './HomePage';
 
-export default class TakeMoney extends React.Component {
+const stripePromise = loadStripe('pk_test_51Nfdb7CdnACsum6gSCSuUwSZSw3e8EMUufywJKtxLy98eg822NWy3PiSGBxiR4jVpcXYrphvyJ8zSnvGKnjkpei200PFQrLVUT');
 
-    /*onToken = (token) => {
-        fetch('/save-stripe-token', {
-          method: 'POST',
-          body: JSON.stringify(token),
-        }).then(response => {
-          response.json().then(data => {
-            alert(`We are in business, ${data.email}`);
-          });
-        });
-    }*/
-
-  render() {
-    return (
-      // ...
-      <StripeCheckout
-        token={(token) =>{
-            console.log(token);
-            if(token.email != null){
-                localStorage.setItem('email',token.email);
-                window.location.assign('signup')
-            }
-        }}
-        
-        stripeKey='pk_test_51Nfdb7CdnACsum6gSCSuUwSZSw3e8EMUufywJKtxLy98eg822NWy3PiSGBxiR4jVpcXYrphvyJ8zSnvGKnjkpei200PFQrLVUT'
-      />
-    )
-  }
+function StripeMain() {
+  return (
+    <Elements stripe={stripePromise}>
+      <HomePage />
+    </Elements>
+  );
 }
+
+export default StripeMain;
