@@ -33,7 +33,7 @@ const Access = () => {
                 if(response.data['access_token'] !== null){
                     setAccess(response.data['access_token']);
                 }else{
-                    alert('ERRÖR!!')
+                    alert('ERROR!!')
                 }
             })
         }catch(error){  

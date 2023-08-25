@@ -17,6 +17,7 @@ function clearStorage() {
   let session = sessionStorage.getItem('username');
   if (session == null) {
     localStorage.clear();
+    localStorage.setItem('isLogin','false');
   }
   sessionStorage.setItem('username','');
 }

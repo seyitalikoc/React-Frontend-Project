@@ -28,7 +28,7 @@ const _Login = () => {
                 localStorage.setItem("username", JSON.stringify(userData.username));
                 localStorage.setItem("access_token", JSON.stringify(response.data['access_token'].toString()));
                 localStorage.setItem("refresh_token", JSON.stringify(response.data['refresh_token'].toString()));
-                localStorage.setItem("logincontrol", "true");
+                localStorage.setItem("isLogin", "true");
                 localStorage.setItem("id",response.data['id']);
                 navigate('/');
                 window.location.reload();
