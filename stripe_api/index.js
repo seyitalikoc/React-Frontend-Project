@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const stripe = require('stripe')('sk_test_51Nfdb7CdnACsum6gEcntSZbJYMZ3N9ijcSL2hWLLLe1NYhjjA0gNMzec2WFcEhOBB42dEhK3nA50kSdXzfWjlMLh00xiYqYRQW');
+const stripe = require('stripe')('');
 
 const port = 3001
 
