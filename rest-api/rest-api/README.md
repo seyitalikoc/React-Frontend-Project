@@ -43,8 +43,8 @@ Bu adımlar, projenin yerel ortamda çalışmasını sağlamak için gerekenleri
 GitHub reposunu bilgisayarınıza klonlayarak başlayın.
 
 ```bash
-git clone https://github.com/seyitalikoc/NestJs-Rest-API.git
-cd restapi/project-name
+git clone https://github.com/seyitalikoc/React-Frontend-Project.git
+cd React-Frontend-Project/rest-api
 ```
 
 ### Adım 2: Bağımlılıkları Yükleyin
@@ -60,7 +60,7 @@ Uygulamayı yerel ortamda çalıştırmak için aşağıdaki komutu kullanın:
 npm run start:dev
 ```
 
-Uygulama, varsayılan olarak http://localhost:3000 adresinde çalışacaktır.
+Uygulama, varsayılan olarak http://localhost:4000 adresinde çalışacaktır.
 
 
 ## API Kullanımı
