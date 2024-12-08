@@ -65,6 +65,11 @@ Stripe ile ödeme yapabilmek için Stripe hesabınızın API anahtarlarını alm
 
 Stripe API, varsayılan olarak http://localhost:3001 adresinde çalışacaktır.
 
+## Kullanıcı Arayüzü
+Frontend uygulaması, kullanıcıların ödeme yapabilmesini sağlayacak sade bir arayüze sahiptir. Kullanıcılar ödeme bilgilerini girdikten sonra, backend ödeme işlemini işleyip sonucu kullanıcıya bildirir.
+
+
+
 ## Proje Yapısı
 ```bash
 /rest-api
@@ -93,9 +98,6 @@ Stripe API, varsayılan olarak http://localhost:3001 adresinde çalışacaktır.
   ├── package-lock.json
   └── package.json
 ```
-
-## Kullanıcı Arayüzü
-Frontend uygulaması, kullanıcıların ödeme yapabilmesini sağlayacak sade bir arayüze sahiptir. Kullanıcılar ödeme bilgilerini girdikten sonra, backend ödeme işlemini işleyip sonucu kullanıcıya bildirir.
 
 
 
